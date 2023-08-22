@@ -22,7 +22,9 @@ function random() {
         FechRandom();
     },[]);
 
-    const FechRandom = () =>{
+   const FechRandom = () =>{
+      if(isAuthenticated === true){
+          
         setIsloading(true)
         const apiUri ='https://api.thecatapi.com/v1/images/search?format=json';
         axios.get(apiUri)
@@ -30,12 +32,18 @@ function random() {
             setdatacat(Response.data);
             console.log(Response.data);
             setIsloading(false)
+         
         })
         .catch(e =>{
             console.error("Fect Error: ",e);
             setIsloading(false)
         });
+      }else{
+       console.log("Auth false");
+      }
+       
     }
+    
     const logouts = () =>{
       logout();
       navigate('/');
