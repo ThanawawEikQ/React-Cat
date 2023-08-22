@@ -1,5 +1,9 @@
 # React-tsx-Cat
 
+#Setup
+*npm i axios
+*npm i react-router-dom@6
+
 ![car](https://github.com/ThanawawEikQ/React-Cat/assets/114007549/7fe810f8-16d5-4b27-9dbd-fdff4e2aab9b)
 * Page Login
   
