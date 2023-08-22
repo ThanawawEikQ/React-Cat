@@ -12,6 +12,7 @@ interface ObCat{
 
 function random() {
   const { isAuthenticated } = useAuth();
+  const { logout } = useAuth();
   console.log(isAuthenticated);
     const navigate = useNavigate();
     const [isLoading,setIsloading] = useState<boolean>(false)
@@ -35,7 +36,8 @@ function random() {
             setIsloading(false)
         });
     }
-    const logout = () =>{
+    const logouts = () =>{
+      logout();
       navigate('/');
     }
 
@@ -44,7 +46,7 @@ function random() {
         {isAuthenticated === true ? (
         <div className="Card-content">
           <div className="Card-Logout">
-            <button className="Cat-btn-logout" onClick={logout}>
+            <button className="Cat-btn-logout" onClick={logouts}>
               Logout
             </button>
           </div>
